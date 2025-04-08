@@ -1,0 +1,47 @@
+{
+	"name": "Ubuntu Python",
+	"image": "mcr.microsoft.com/devcontainers/base:noble",
+	"features": {
+		"ghcr.io/devcontainers/features/git:1": {
+			"ppa": true,
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/python:1": {
+			"installTools": true,
+			"version": "3.12"
+		},
+		"ghcr.io/jsburckhardt/devcontainer-features/ruff:1": {},
+		"ghcr.io/va-h/devcontainers-features/uv:1": {
+			"shellautocompletion": true,
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/fish-apt-get:1": {},
+		"ghcr.io/devcontainers-extra/features/lefthook-asdf:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-extra/features/starship:1": {
+			"version": "latest"
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"donjayamanne.git-extension-pack",
+				"mhutchie.git-graph",
+				"ms-azuretools.vscode-docker",
+				"ms-python.debugpy",
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"charliermarsh.ruff",
+				"GitHub.copilot",
+				"GitHub.copilot-chat",
+				"ms-toolsai.jupyter"
+			]
+		}
+	},
+	"mounts": [
+		"source=${localEnv:USERPROFILE}/.ssh,target=/root/.ssh,type=bind,consistency=cached"
+	],
+	"remoteUser": "root",
+	"postStartCommand": "echo 'starship init fish | source' >> /root/.config/fish/config.fish && starship preset plain-text-symbols -o /root/.config/starship.toml"
+}
