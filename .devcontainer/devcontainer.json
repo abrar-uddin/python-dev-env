@@ -40,9 +40,9 @@
 			]
 		}
 	},
-	"mounts": [
-		"source=${localEnv:USERPROFILE}/.ssh,target=/root/.ssh,type=bind,consistency=cached"
-	],
+	#"mounts": [
+	#	"source=${localEnv:USERPROFILE}/.ssh,target=/root/.ssh,type=bind,consistency=cached"
+	#],
 	"remoteUser": "root",
 	"postStartCommand": "mkdir -p $HOME/.config/fish && echo 'starship init fish | source' >> $HOME/.config/fish/config.fish && starship preset plain-text-symbols -o $HOME/.config/starship.toml"
 }
