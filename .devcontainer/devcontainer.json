@@ -34,8 +34,7 @@
 				"ms-python.python",
 				"ms-python.vscode-pylance",
 				"charliermarsh.ruff",
-				"GitHub.copilot",
-				"GitHub.copilot-chat",
+				"Anthropic.claude-code",
 				"ms-toolsai.jupyter"
 			]
 		}
